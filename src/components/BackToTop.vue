@@ -1,8 +1,8 @@
 <script setup>
 import { ref, onMounted, onUnmounted } from 'vue'
 
-// Mostraremos el boton despues de desplazarse 200px hacia abajo
 const isVisible = ref(false)
+
 const handleScroll = () => {
   isVisible.value = window.scrollY > 200
 }

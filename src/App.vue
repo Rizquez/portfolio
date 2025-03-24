@@ -6,14 +6,11 @@ export default {
     BackToTop
   },
   watch: {
-    // Observamos el objeto $route que representa la ruta actual
-    // Y ejecutamos el metodo cada vez que la ruta cambia
     '$route' (to, from) {
       this.scrollToTop();
     }
   },
   methods: {
-    // Metodo que desplaza la ventana al inicio de la pagina
     scrollToTop() {
       window.scrollTo(0, 0);
     }

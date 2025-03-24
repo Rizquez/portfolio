@@ -7,25 +7,32 @@ Importacion de las fuentes desde googles
 Colores bases sobre todos los estilos
 ********************************************/
 :root {
-  --primary-100:#2E8B57;
-  --primary-200:#61bc84;
-  --primary-300:#c6ffe6;
-  --accent-100:#8FBC8F;
-  --accent-200:#345e37;
-  --text-100:#FFFFFF;
-  --text-200:#e0e0e0;
-  --bg-100:#1E1E1E;
-  --bg-200:#2d2d2d;
-  --bg-300:#454545;
+  --primary-100:#E7D1BB;
+  --primary-200:#c8b39e;
+  --primary-300:#84725e;
+  --accent-100:#A096A5;
+  --accent-200:#463e4b;
+  --text-100:#A096A2;
+  --text-200:#847a86;
+  --bg-100:#151931;
+  --bg-200:#252841;
+  --bg-300:#3d3f5b;
+    
+  --h1-font: 4.5rem;
+  --h2-font: 2.9rem;
+  --p-font: 1.1rem;
 }
 
 /********************************************
 Configuracion base sobre todos los body
 ********************************************/
 body {
-  font-family: 'Rubik', sans-serif;
-  margin: 0 auto;
   width: 100%;
+  margin: 0 auto;
+  font-family: 'Rubik', sans-serif;
+  background: var(--bg-100);
+  background: -webkit-linear-gradient(to right, var(--bg-300), var(--bg-100));
+  background: linear-gradient(to right, var(--bg-300), var(--bg-100));
 }
 
 /********************************************
