@@ -4,7 +4,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const isVisible = ref(false)
 
 const handleScroll = () => {
-  isVisible.value = window.scrollY > 200
+  isVisible.value = window.scrollY > 100
 }
 
 const scrollToTop = () => {
