@@ -11,3 +11,12 @@ import Footer from '@/components/Footer.vue'
     <Footer/>
   </main>
 </template>
+
+<style scoped>
+main > *:last-child {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 40px;
+}
+</style>

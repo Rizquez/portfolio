@@ -24,15 +24,19 @@ Colores bases sobre todos los estilos
 }
 
 /********************************************
-Configuracion base sobre todos los body
+Configuracion base sobre body y el html
 ********************************************/
+html {
+  min-height: 100%;
+}
+
 body {
   width: 100%;
   margin: 0 auto;
   font-family: 'Rubik', sans-serif;
   background: var(--bg-100);
-  background: -webkit-linear-gradient(to right, var(--bg-300), var(--bg-100));
-  background: linear-gradient(to right, var(--bg-300), var(--bg-100));
+  background: -webkit-linear-gradient(to top, var(--bg-300), var(--bg-100));
+  background: linear-gradient(to top, var(--bg-300), var(--bg-100));
 }
 
 /********************************************

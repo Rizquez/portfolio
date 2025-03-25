@@ -1,9 +1,11 @@
 <template>
     <header>
+        <div>
+            <img src="@/assets/images/code-thinking.svg" alt="logo">
+        </div>
         <div class="routers">
             <router-link :to="{name: 'home'}" class="router">Home</router-link>
             <router-link :to="{name: 'home'}" class="router">About</router-link>
-            <router-link :to="{name: 'home'}" class="router">Services</router-link>
             <router-link :to="{name: 'home'}" class="router">Projects</router-link>
         </div>
         <div>
@@ -17,6 +19,10 @@ header {
     display: flex;
     justify-content: space-between;
     padding: 40px 100px;
+}
+header img {
+    max-width: 150px;
+    max-height: auto;
 }
 header p {
     margin: 0;
