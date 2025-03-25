@@ -1,6 +1,6 @@
 <template>
     <footer>
-        <p>© 2025 Made using Vue.js by Pedro Rizquez</p>
+        <p>© 2025 - Made with Vue.js</p>
     </footer>
 </template>
 
