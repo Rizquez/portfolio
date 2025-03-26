@@ -39,7 +39,7 @@ const handleFormSubmit = () => {
 <style scoped>
 form {
    padding-top: 100px;
-   max-width: 50%;
+   width: 800px;
    margin: 0 auto;
    display: flex;
    flex-direction: column;

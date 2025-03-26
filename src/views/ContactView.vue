@@ -13,10 +13,18 @@ import Footer from '@/components/Footer.vue'
 </template>
 
 <style scoped>
-main > *:last-child {
-  position: absolute;
-  bottom: 0;
+main {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
   width: 100%;
-  height: 40px;
+}
+
+main > * {
+  flex-shrink: 0;
+}
+
+main > :last-child {
+  margin-top: auto; /* Empuja el footer hacia abajo si hay espacio */
 }
 </style>
