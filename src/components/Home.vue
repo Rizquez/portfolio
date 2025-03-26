@@ -7,36 +7,26 @@
             <p>Passionate about building efficient solutions through code.</p>
          </div>
          <div>
-            <img src="@/assets/images/freelancer.svg" alt="">
+            <img src="@/assets/images/freelancer.svg" alt="freelancer">
          </div>
-      </div>
-      <div class="resume">
-         <p class="es">Download CV (es)</p>
-         <p class="en">Download CV (en)</p>
       </div>
    </section>
 
-   <!-- <section id="about" class="about">
-      <div class="experience">
-         <div class="me">
+   <section id="about" class="about">
+      <div class="me">
+         <div>
+            <img src="@/assets/images/vibe-coding.svg" alt="vibe-coding">
+         </div>
+         <div class="experience">
+            <h2>About me</h2>
             <p>I am a software developer with experience in process automation, web development and cloud infrastructure management.</p>
             <p>I currently work as a lead developer at LETSMEP, where I lead custom solutions using technologies such as Python, C#, Azure and Docker.</p>
             <p>I have specialised training in artificial intelligence, big data and cross-platform development, and I am always looking for new challenges to boost my professional growth.</p>
+            <p>I specialize as a Backend and Cloud Developer, with a focus on automation, artificial intelligence and DevOps, where I have more than 2 years of experience in the sector.</p>
             <p class="slogan">Code that optimises, solutions that transform.</p>
          </div>
-         <div class="information">
-            <p><span>Speciality:</span> Backend & Cloud Developer with focus on automation, artificial intelligence and DevOps</p>
-            <p><span>Experience:</span> 2 years and 3 months</p>
-            <p><span>Address:</span> Barcelona, Spain</p>
-            <p><span>Email:</span> pedro.rizquez.94@hotmail.com</p>
-            <p><span>Phone:</span> +34 633504225</p>
-            <div>
-               <a href="https://github.com/Rizquez" target="_blank"><img src="@/assets/images/github.png" alt="Github"></a>
-               <a href="https://www.linkedin.com/in/pedro-rizquez/" target="_blank"><img src="@/assets/images/linkedin.png" alt="LinkedIn"></a>
-            </div>
-         </div>
       </div>
-   </section> -->
+   </section>
 
    <!-- <section>
       <div>
@@ -64,12 +54,11 @@
 
 <style scoped>
 .home {
-   padding-top: 50px;
+   padding: 100px;
 }
 .greetings {
    display: flex;
    margin: 0 auto;
-   padding: 40px 100px 0px 100px;
    justify-content: space-between;
 }
 .greetings img {
@@ -89,34 +78,80 @@
    color: var(--primary-200);
 }
 
-.resume {
+.about {
+   padding: 100px;
+}
+.about img {
+   max-width: 500px;
+}
+.about p {
+   color: var(--accent-100);
+   text-align: justify;
+   font-size: var(--p-font);
+}
+.about .me {
    display: flex;
    flex-direction: row;
-   justify-content: right;
-   align-items: center;
-   padding-right: 100px;
-   gap: 20px;
-}
-.resume .en, .es {
-   cursor: pointer;
-   font-size: var(--p-font);
-   color: var(--text-100);
-   text-decoration: underline;
-}
-.resume .en:hover, .es:hover {
-   color: var(--primary-100);
+   gap: 200px;
 }
 
-.about {
-   padding-top: 200px;
-}
-.about h2 {
-   text-align: center;
-   font-size: var(--h2-font);
+.experience h2 {
    color: var(--accent-100);
+   font-size: var(--h2-font);
+   margin-top: 0;
+}
+.experience .slogan {
+   font-style: oblique;
+   text-align: right;
+   padding-top: 80px;
+   margin-bottom: 0;
 }
 
-/* .experience {
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* 
+.experience {
    display: flex;
    flex-direction: row;
    padding: 0px 100px;
@@ -135,11 +170,7 @@
 .experience span {
    font-weight: bolder;
 }
-.experience .slogan {
-   font-style: oblique;
-   text-align: right;
-   padding-top: 40px;
-}
+
 
 .information div {
    display: flex;

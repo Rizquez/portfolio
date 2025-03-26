@@ -1,7 +1,7 @@
 <template>
     <header>
         <div>
-            <img src="@/assets/images/code-thinking.svg" alt="logo">
+            <img src="@/assets/images/code-thinking.svg" alt="code-thinking">
         </div>
         <div class="routers">
             <router-link :to="{name: 'home'}" class="router">Home</router-link>
