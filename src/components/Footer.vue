@@ -1,6 +1,7 @@
 <template>
     <footer>
-        <div>
+        <div class="info">
+            <router-link :to="{name: 'privacy', params: { url: 'privacy-policy' }}" class="router">Privacy policy</router-link>
             <p>© 2025 - Made with Vue.js</p>
         </div>
         <div class="rrss">
@@ -27,5 +28,15 @@ footer p {
 footer .rrss {
     display: flex;
     gap: 10px;
+    align-items: end;
+}
+footer .router {
+    text-decoration: none;
+    font-weight: lighter;
+    color: var(--text-100);
+    font-size: var(--p-font);
+}
+footer .router:hover {
+    color: var(--primary-100);
 }
 </style>
