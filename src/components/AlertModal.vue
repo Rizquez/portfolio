@@ -1,6 +1,4 @@
 <script setup>
-import { defineProps, defineEmits } from 'vue'
-
 const emit = defineEmits(['close'])
 
 const props = defineProps({
@@ -20,12 +18,12 @@ const handleAccept = () => {
 </script>
 
 <template>
-    <div v-if="visible" class="modal-overlay">
-      <div class="modal">
-        <p>{{ message }}</p>
-        <button @click="handleAccept">Accept</button>
-      </div>
+  <div v-if="visible" class="modal-overlay">
+    <div class="modal">
+      <p>{{ message }}</p>
+      <button @click="handleAccept">Accept</button>
     </div>
+  </div>
 </template>
 
 <style scoped>

@@ -4,7 +4,7 @@ import { ref, onMounted, onUnmounted } from 'vue'
 const isVisible = ref(false)
 
 const handleScroll = () => {
-  isVisible.value = window.scrollY > 200
+  isVisible.value = window.scrollY > 100
 }
 
 const scrollToTop = () => {
@@ -32,7 +32,7 @@ onUnmounted(() => {
   position: fixed;
   bottom: 20px;
   right: 20px;
-  color: var(--black);
+  color: var(--text-100);
   width: 50px;
   height: 50px;
   font-size: 2em;
@@ -44,9 +44,5 @@ onUnmounted(() => {
   opacity: 0.7;
   transition: opacity 0.3s ease;
   z-index: 1000; 
-}
-
-.back-to-top:hover {
-  opacity: 1;
 }
 </style>

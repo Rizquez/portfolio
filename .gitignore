@@ -1,4 +1,3 @@
-# Logs
 logs
 *.log
 npm-debug.log*
@@ -16,7 +15,6 @@ coverage
 /cypress/videos/
 /cypress/screenshots/
 
-# Editor directories and files
 .vscode/*
 !.vscode/extensions.json
 .idea
@@ -27,3 +25,5 @@ coverage
 *.sw?
 
 *.tsbuildinfo
+
+/.notes/

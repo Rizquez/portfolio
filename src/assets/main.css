@@ -20,19 +20,25 @@ Colores bases sobre todos los estilos
     
   --h1-font: 4.5rem;
   --h2-font: 2.9rem;
-  --p-font: 1.1rem;
+  --h3-font: 2rem;
+  --h4-font: 1.5rem;
+  --p-font: 1.2rem;
 }
 
 /********************************************
-Configuracion base sobre todos los body
+Configuracion base sobre body y el html
 ********************************************/
+html {
+  min-height: 100%;
+}
+
 body {
-  width: 100%;
+  min-width: 100%;
   margin: 0 auto;
   font-family: 'Rubik', sans-serif;
   background: var(--bg-100);
-  background: -webkit-linear-gradient(to right, var(--bg-300), var(--bg-100));
-  background: linear-gradient(to right, var(--bg-300), var(--bg-100));
+  background: -webkit-linear-gradient(to top, var(--bg-300), var(--bg-100));
+  background: linear-gradient(to top, var(--bg-300), var(--bg-100));
 }
 
 /********************************************

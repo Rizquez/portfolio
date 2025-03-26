@@ -10,12 +10,17 @@ const routes = [
     path: '/:url',
     name: 'contact',
     component: () => import('@/views/ContactView.vue')
+  },
+  {
+    path: '/:url',
+    name: 'privacy',
+    component: () => import('@/views/PrivacyPolicyView.vue')
   }
 ]
 
 const router = createRouter({
-    history: createWebHistory(import.meta.env.BASE_URL),
-    routes
+  history: createWebHistory(import.meta.env.BASE_URL),
+  routes
 });
 
 export default router
