@@ -39,7 +39,7 @@ header .router:hover {
 
 .routers {
     display: flex;
-    gap: 60px;
+    gap: 8rem;
 }
 
 .contact {

@@ -30,7 +30,7 @@ import Footer from '@/components/Footer.vue'
             <p>This site may contain links to external sites (such as GitHub or other portfolios). We are not responsible for the privacy practices of those sites.</p>
             <h3>6. Changes to this policy</h3>
             <p>This policy may be updated from time to time. It is recommended that it be reviewed periodically.</p>
-            <p class="update">Last updated: 26 March 2025</p>
+            <p class="update">Last updated: March 2025</p>
         </section>
 
         <Footer/>

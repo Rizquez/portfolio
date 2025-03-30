@@ -7,7 +7,7 @@
         <div class="rrss">
             <a href="https://github.com/Rizquez" target="_blank"><img src="@/assets/images/github.svg" alt="github"></a>
             <a href="https://www.linkedin.com/in/pedro-rizquez/" target="_blank"><img src="@/assets/images/linkedin.svg" alt="linkedin"></a>
-      </div>
+        </div>
     </footer>
 </template>
 
@@ -27,7 +27,7 @@ footer p {
 }
 footer .rrss {
     display: flex;
-    gap: 10px;
+    gap: 0.5rem;
     align-items: end;
 }
 footer .router {
