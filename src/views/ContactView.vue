@@ -54,7 +54,7 @@ form {
   margin: 0 auto;
   display: flex;
   flex-direction: column;
-  gap: 15px;
+  gap: 1rem;
   font-size: var(--p-font);
   font-weight: lighter;
 }
