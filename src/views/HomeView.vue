@@ -164,7 +164,6 @@ onMounted(async () => {
 }
 .cards p, a {
   text-align: justify;
-  text-decoration: none;
   font-size: var(--mini-font);
   color: var(--accent-100);
   font-weight: lighter;
@@ -172,6 +171,10 @@ onMounted(async () => {
 .cards a {
   text-align: right;
   padding-top: 20px;
+  text-decoration: none;
+  font-size: var(--mini-font);
+  color: var(--primary-100);
+  font-weight: lighter;
 }
 .cards h4 {
   color: var(--accent-100);

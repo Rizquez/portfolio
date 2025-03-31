@@ -30,7 +30,7 @@ const goToSection = (sectionId) => {
       <img src="@/assets/images/code-thinking.svg" alt="code-thinking">
     </div>
     <div class="routers">
-      <a class="router" @click.prevent="goToSection('home')">Home</a>
+      <router-link :to="{ name: 'home'}" class="router">Home</router-link>
       <a class="router" @click.prevent="goToSection('about')">About</a>
       <a class="router" @click.prevent="goToSection('projects')">Projects</a>
     </div>
@@ -39,8 +39,6 @@ const goToSection = (sectionId) => {
     </div>
   </header>
 </template>
-
-
 
 <style scoped>
 header {
