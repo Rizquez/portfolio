@@ -1,6 +1,30 @@
 <script setup>
+import { onMounted, nextTick } from 'vue'
 import Head from '@/components/Head.vue'
 import Footer from '@/components/Footer.vue'
+
+onMounted(async () => {
+  const sectionId = sessionStorage.getItem('scrollToSection')
+  if (sectionId) {
+    await nextTick()
+    const el = document.getElementById(sectionId)
+
+    if (el) {
+      el.scrollIntoView({ behavior: 'smooth' })
+      sessionStorage.removeItem('scrollToSection')
+    } else {
+      const tryScroll = setInterval(() => {
+        const retryEl = document.getElementById(sectionId)
+        if (retryEl) {
+          retryEl.scrollIntoView({ behavior: 'smooth' })
+          sessionStorage.removeItem('scrollToSection')
+          clearInterval(tryScroll)
+        }
+      }, 100)
+      setTimeout(() => clearInterval(tryScroll), 3000)
+    }
+  }
+})
 </script>
 
 <template>
@@ -140,7 +164,6 @@ import Footer from '@/components/Footer.vue'
 }
 .cards p, a {
   text-align: justify;
-  text-decoration: none;
   font-size: var(--mini-font);
   color: var(--accent-100);
   font-weight: lighter;
@@ -148,6 +171,10 @@ import Footer from '@/components/Footer.vue'
 .cards a {
   text-align: right;
   padding-top: 20px;
+  text-decoration: none;
+  font-size: var(--mini-font);
+  color: var(--primary-100);
+  font-weight: lighter;
 }
 .cards h4 {
   color: var(--accent-100);

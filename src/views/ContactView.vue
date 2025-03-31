@@ -34,16 +34,16 @@ const handleFormSubmit = () => {
     
     <section>
       <form @submit.prevent="handleFormSubmit">
-        <input type="text" placeholder="Company name / Personal name" required>
         <input type="text" placeholder="Email address" v-model="email" required>
+        <input type="text" placeholder="Subject" required>
         <textarea name="" id="" cols="50" rows="10" placeholder="Write your message here" required></textarea>
         <button type="submit">Send message</button>
       </form>
-
-      <AlertModal :message="modalMessage" :visible="isModalVisible" @close="handleModalClose"/>
     </section>
-    
+
     <Footer/>
+
+    <AlertModal :message="modalMessage" :visible="isModalVisible" @close="handleModalClose"/>
   </main>
 </template>
 
