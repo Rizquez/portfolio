@@ -1,22 +1,56 @@
 <script setup>
 import { ref } from 'vue'
+
+// Componentes usados en esta vista
 import AlertModal from '@/components/AlertModal.vue'
 import Head from '@/components/Head.vue'
 import Footer from '@/components/Footer.vue'
 
+/**
+ * Valor del input de email del formulario.
+ * @type {import('vue').Ref<string>}
+ */
 const email = ref('')
+
+/**
+ * Mensaje a mostrar dentro del modal de alerta.
+ * @type {import('vue').Ref<string>}
+ */
 const modalMessage = ref('')
+
+/**
+ * Controla la visibilidad del modal de alerta.
+ * @type {import('vue').Ref<boolean>}
+ */
 const isModalVisible = ref(false)
 
+/**
+ * Cierra el modal de alerta.
+ * @function handleModalClose
+ * @returns {void}
+ */
 const handleModalClose = () => {
   isModalVisible.value = false
 }
 
+/**
+ * Valida el formato de un email usando expresion regular.
+ * @function validateEmail
+ * @param {string} emailString - El email a validar.
+ * @returns {boolean} `true` si el email es valido, `false` en caso contrario.
+ */
 const validateEmail = (emailString) => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
   return regex.test(emailString)
 }
 
+/**
+ * Maneja el envio del formulario:
+ * - Valida el email ingresado.
+ * - Muestra un mensaje en un modal de alerta dependiendo del resultado.
+ * @function handleFormSubmit
+ * @returns {void}
+ */
 const handleFormSubmit = () => {
   if (validateEmail(email.value)) {
     modalMessage.value = 'Email sent successfully ✅'
@@ -25,7 +59,6 @@ const handleFormSubmit = () => {
   }
   isModalVisible.value = true
 }
-
 </script>
 
 <template>

@@ -1,15 +1,33 @@
 <script setup>
 import { useRouter, useRoute } from 'vue-router'
 
+/**
+ * Instancia del enrutador de Vue Router.
+ * Usada para redireccionar a otras rutas programaticamente.
+ */
 const router = useRouter()
+
+/**
+ * Informacion de la ruta actual.
+ * Usada para saber si ya estamos en la pagina de inicio ('home').
+ */
 const route = useRoute()
 
+/**
+ * Navega o hace scroll a una seccion especifica dentro de la pagina.
+ * - Si ya estamos en la pagina 'home', hace scroll suave hacia la seccion.
+ * - Si no estamos en 'home', guarda el ID de la seccion en sessionStorage y redirige a 'home' para luego hacer scroll desde alli.
+ * @function goToSection
+ * @param {string} sectionId - El ID del elemento al que se desea hacer scroll.
+ * @returns {void}
+ */
 const goToSection = (sectionId) => {
   if (route.name === 'home') {
     const el = document.getElementById(sectionId)
     if (el) {
       el.scrollIntoView({ behavior: 'smooth' })
     } else {
+      // Retry en caso de que el elemento aun no este en el DOM (por ejemplo, por lazy loading)
       setTimeout(() => {
         const elRetry = document.getElementById(sectionId)
         if (elRetry) {
@@ -18,6 +36,7 @@ const goToSection = (sectionId) => {
       }, 100)
     }
   } else {
+    // Guardamos el objetivo en sessionStorage para usarlo despues del redireccionamiento
     sessionStorage.setItem('scrollToSection', sectionId)
     router.push({ name: 'home' })
   }

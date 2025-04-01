@@ -1,5 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
+/**
+ * Definicion de rutas de la aplicacion.
+ * Cada ruta mapea una URL a un componente de vista.
+ */
 const routes = [
   {
     path: '/',
@@ -18,6 +22,10 @@ const routes = [
   }
 ]
 
+/**
+ * Instancia del enrutador de Vue Router.
+ * Usa historial basado en `history.pushState`.
+ */
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes

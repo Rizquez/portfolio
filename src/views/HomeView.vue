@@ -1,8 +1,17 @@
 <script setup>
 import { onMounted, nextTick } from 'vue'
+
+// Componentes de layout
 import Head from '@/components/Head.vue'
 import Footer from '@/components/Footer.vue'
 
+/**
+ * Al montar la vista:
+ * - Revisa si hay un ID de seccion almacenado en sessionStorage (scrollToSection).
+ * - Si existe, espera al proximo ciclo del DOM (`nextTick`).
+ * - Intenta hacer scroll suave hacia ese elemento.
+ * - Si aun no esta en el DOM, intenta hacerlo cada 100ms hasta que aparezca (maximo 3 segundos).
+ */
 onMounted(async () => {
   const sectionId = sessionStorage.getItem('scrollToSection')
   if (sectionId) {
@@ -13,6 +22,7 @@ onMounted(async () => {
       el.scrollIntoView({ behavior: 'smooth' })
       sessionStorage.removeItem('scrollToSection')
     } else {
+      // Si el elemento aun no existe, intenta localizarlo periodicamente
       const tryScroll = setInterval(() => {
         const retryEl = document.getElementById(sectionId)
         if (retryEl) {
@@ -21,6 +31,8 @@ onMounted(async () => {
           clearInterval(tryScroll)
         }
       }, 100)
+
+      // Detiene el intento despues de 3 segundos si no se encuentra el elemento
       setTimeout(() => clearInterval(tryScroll), 3000)
     }
   }
