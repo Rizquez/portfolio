@@ -97,24 +97,32 @@ onMounted(async () => {
 .home {
   padding: 100px;
 }
+
+.about img,
+.greetings img,
+.cards img {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
 .greetings {
   display: flex;
   margin: 0 auto;
   justify-content: space-between;
-}
-.greetings img {
-  max-width: 500px;
+  align-items: center;
+  gap: 2rem;
 }
 .greetings h1 {
-  font-size: var(--h1-font);
+  font-size: 4.5rem;
   color: var(--accent-100);
 }
 .greetings h2 {
-  font-size: var(--h2-font);
+  font-size: 2.9rem;
   color: var(--accent-100);
 }
 .greetings p {
-  font-size: var(--p-font);
+  font-size: 1.3rem;
   font-style: oblique;
   color: var(--primary-200);
 }
@@ -124,19 +132,20 @@ onMounted(async () => {
   display: flex;
   flex-direction: row;
   gap: 10rem;
+  align-items: center;
 }
-.about img {
-  max-width: 500px;
+.about > div {
+  flex: 1;
 }
 .about .txt {
   color: var(--accent-100);
   text-align: justify;
-  font-size: var(--p-font);
+  font-size: 1.3rem;
   font-weight: lighter;
 }
 .experience h2 {
   color: var(--accent-100);
-  font-size: var(--h2-font);
+  font-size: 2.9rem;
   margin-top: 0;
 }
 .experience .slogan {
@@ -145,7 +154,7 @@ onMounted(async () => {
   padding-top: 60px;
   margin-bottom: 0;
   color: var(--primary-200);
-  font-size: var(--p-font);
+  font-size: 1.3rem;
 }
 
 .projects {
@@ -153,7 +162,7 @@ onMounted(async () => {
 }
 .projects h2 {
   color: var(--accent-100);
-  font-size: var(--h2-font);
+  font-size: 2.9rem;
   margin-top: 0;
   padding-bottom: 50px;
   text-align: center;
@@ -162,10 +171,12 @@ onMounted(async () => {
   display: flex;
   flex-direction: row;
   justify-content: space-evenly;
+  gap: 2rem;
+  flex-wrap: wrap;
 }
 
 .cards > div {
-  flex: 1;
+  flex: 1 1 100%;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -176,7 +187,7 @@ onMounted(async () => {
 }
 .cards p, a {
   text-align: justify;
-  font-size: var(--mini-font);
+  font-size: 1rem;
   color: var(--accent-100);
   font-weight: lighter;
 }
@@ -184,22 +195,114 @@ onMounted(async () => {
   text-align: right;
   padding-top: 20px;
   text-decoration: none;
-  font-size: var(--mini-font);
+  font-size: 1rem;
   color: var(--primary-100);
   font-weight: lighter;
 }
 .cards h4 {
   color: var(--accent-100);
-  font-size: var(--h4-font);
+  font-size: 1.5rem;
   text-align: center;
 }
 .cards span {
   font-weight: bold;
 }
-.cards img {
-  width: 500px;
-}
 .cards .note {
   font-style: oblique;
+}
+
+@media (max-width: 1000px) {
+  .home,
+  .about,
+  .projects {
+    padding: 80px 60px;
+  }
+
+  .greetings h1 {
+    font-size: 3.5rem;
+  }
+  .greetings h2,
+  .experience h2,
+  .projects h2 {
+    font-size: 2.2rem;
+  }
+
+  .about {
+    gap: 5rem;
+  }
+
+  .about .txt,
+  .greetings p,
+  .experience .slogan {
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .home,
+  .about,
+  .projects {
+    padding: 60px 40px;
+  }
+
+  .greetings {
+    flex-direction: column-reverse;
+    text-align: center;
+  }
+
+  .about {
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  .experience .slogan {
+    text-align: center;
+    padding-top: 30px;
+  }
+
+  .cards {
+    flex-direction: column;
+    align-items: center;
+  }
+  .cards > div {
+    width: 100%;
+    padding: 20px;
+  }
+}
+
+@media (max-width: 480px) {
+  .home,
+  .about,
+  .projects {
+    padding: 40px 20px;
+  }
+
+  .greetings h1 {
+    font-size: 2.5rem;
+  }
+  .greetings h2 {
+    font-size: 1.8rem;
+  }
+
+  .greetings p,
+  .about .txt,
+  .experience .slogan {
+    font-size: 1rem;
+  }
+
+  .experience h2,
+  .projects h2 {
+    font-size: 1.8rem;
+  }
+
+  .cards a {
+    font-size: 0.95rem;
+  }
+  .cards p {
+    font-size: 0.95rem;
+  }
+  .cards h4 {
+    font-size: 1.2rem;
+  }
 }
 </style>

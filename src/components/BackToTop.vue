@@ -67,4 +67,27 @@ onUnmounted(() => {
   transition: opacity 0.3s ease;
   z-index: 1000; 
 }
+.back-to-top:hover {
+  opacity: 1;
+}
+
+@media (max-width: 768px) {
+  .back-to-top {
+    width: 45px;
+    height: 45px;
+    font-size: 1.8em;
+    bottom: 15px;
+    right: 15px;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-to-top {
+    width: 40px;
+    height: 40px;
+    font-size: 1.5em;
+    bottom: 10px;
+    right: 10px;
+  }
+}
 </style>

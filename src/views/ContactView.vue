@@ -88,7 +88,7 @@ form {
   display: flex;
   flex-direction: column;
   gap: 1rem;
-  font-size: var(--p-font);
+  font-size: 1.3rem;
   font-weight: lighter;
 }
 form textarea,
@@ -123,5 +123,48 @@ main > * {
 
 main > :last-child {
   margin-top: auto;
+}
+
+@media (max-width: 1000px) {
+  form {
+    width: 600px;
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  form {
+    width: 90%;
+    font-size: 1.05rem;
+    padding-top: 80px;
+  }
+  form textarea,
+  form input[type="text"],
+  form button {
+    padding: 8px;
+  }
+  form textarea {
+    height: 200px;
+  }
+}
+
+@media (max-width: 480px) {
+  form {
+    width: 90%;
+    font-size: 1rem;
+    padding-top: 60px;
+    gap: 0.8rem;
+  }
+
+  form textarea,
+  form input[type="text"],
+  form button {
+    padding: 6px;
+    font-size: 0.95rem;
+  }
+
+  form textarea {
+    height: 150px;
+  }
 }
 </style>

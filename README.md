@@ -4,8 +4,8 @@ This is my personal/professional portfolio as a software developer. Here I show 
 ---
 
 ## 🧪 Portfolio status
-- ✅ Main functionality implemented.
-- ⚠️ Responsibility pending (desktop version optimised, mobile in development).
+- ✅ Main functionality and responsibility (desktop and mobile) implemented.
+<!-- - ⚠️ Responsibility pending (desktop version optimised, mobile in development). -->
 - 🔜 _Planned improvements_: animations, PWA, internationalisation (i18n).
 
 ---

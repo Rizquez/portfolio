@@ -61,10 +61,12 @@ const handleAccept = () => {
   border-radius: 10px;
   text-align: center;
   min-width: 300px;
+  max-width: 90%;
+  box-sizing: border-box;
 }
 .modal p {
   padding-bottom: 10%;
-  font-size: var(--p-font);
+  font-size: 1.3rem;
   color: var(--text-100);
 }
 
@@ -76,11 +78,41 @@ button {
   cursor: pointer;
   border-radius: 30px;
   text-decoration: none;
-  font-size: var(--p-font);
+  font-size: 1.3rem;
 }
 button:hover {
   color: var(--primary-100);
   background-color: var(--primary-300);
+}
+
+@media (max-width: 768px) {
+  .modal {
+    padding: 20px;
+    min-width: 260px;
+  }
+  .modal p {
+    font-size: 0.95rem;
+  }
+
+  button {
+    padding: 10px 25px;
+    font-size: 0.95rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .modal {
+    padding: 15px;
+    min-width: 220px;
+  }
+  .modal p {
+    font-size: 0.9rem;
+  }
+
+  button {
+    padding: 8px 20px;
+    font-size: 0.9rem;
+  }
 }
 </style>
   
