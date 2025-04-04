@@ -75,16 +75,25 @@ onMounted(async () => {
           <img src="@/assets/images/Jummy.png" alt="jummy">
           <p>App to digitise the restaurant experience, allowing customers to browse menus, manage orders and pay from their mobile. It optimises restaurant operations and improves the user experience.</p>
           <p><span>Technologies:</span> Python, SQL, JavaScript, HTML, CSS, Auth0, Netlify, Render, Clever Cloud.</p>
-          <p class="note"><span>Note:</span> You will need credentials to access, please request them in case you want to test the application.</p>
-          <a href="https://jummy-ifp.netlify.app/" target="_blank">Browse to Jummy ></a>
+          <p class="note"><span>Note:</span> This project has been archived.</p>
+          <a href="https://github.com/Rizquez/Jummy" target="_blank">Browse to Repository &gt;</a>
         </div>
         <div>
           <h4>EcoBalance</h4>
           <img src="@/assets/images/EcoBalance.png" alt="ecobalance">
           <p>Interface to calculate and analyse CO<sub>2</sub> sequestration by tree species, promoting sustainable solutions to climate change.</p>
           <p><span>Technologies:</span> Python, SQL, JavaScript, HTML, CSS, Render, Clever Cloud.</p>
+          <p class="note"><span>Note:</span> This project has been archived.</p>
+          <a href="https://github.com/Rizquez/eco_balance" target="_blank">Browse to Repository &gt;</a>
+        </div>
+        <div>
+          <h4>ACIMI</h4>
+          <img src="@/assets/images/ACIMI.png" alt="acimi">
+          <p>Interface to calculate and analyse CO<sub>2</sub> sequestration by tree species, promoting sustainable solutions to climate change.</p>
+          <p class="note">This project is currently under development and is open access.</p>
+          <p><span>Technologies:</span> Python, SQL, JavaScript, HTML, CSS, Render, Clever Cloud.</p>
           <p class="note"><span>Note:</span> The service may take a couple of seconds to load the first time as the server must be up if it is not active.</p>
-          <a href="https://karla-project.onrender.com/" target="_blank">Browse to EcoBalance ></a>
+          <a href="https://acimi.onrender.com/" target="_blank">Browse to ACIMI &gt;</a>
         </div>
       </div>
     </section>
