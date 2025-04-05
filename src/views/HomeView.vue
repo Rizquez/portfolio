@@ -89,7 +89,7 @@ onMounted(async () => {
         <div>
           <h4>ACIMI</h4>
           <img src="@/assets/images/ACIMI.png" alt="acimi">
-          <p>Interface to calculate and analyse CO<sub>2</sub> sequestration by tree species, promoting sustainable solutions to climate change.</p>
+          <p>Web application designed to work on the design of mechanical installations. It automates technical calculations by uploading Excel files and manual data entry, optimising time and reducing errors. The results can be viewed and downloaded in different formats, all from an intuitive and accessible interface.</p>
           <p class="note">This project is currently under development and is open access.</p>
           <p><span>Technologies:</span> Python, SQL, JavaScript, HTML, CSS, Render, Clever Cloud.</p>
           <p class="note"><span>Note:</span> The service may take a couple of seconds to load the first time as the server must be up if it is not active.</p>
