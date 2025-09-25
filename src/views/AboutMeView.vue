@@ -63,7 +63,7 @@ h1 {
 
 h2 {
   font-weight: lighter;
-  font-size: 2rem;
+  font-size: 1.8rem;
   text-align: right;
 }
 
@@ -95,7 +95,7 @@ span {
   }
 
   h2 {
-    font-size: 1.8rem;
+    font-size: 1.6rem;
   }
 
   h3 {
@@ -117,7 +117,7 @@ span {
   }
 
   h2 {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
   }
 
   h3 {
