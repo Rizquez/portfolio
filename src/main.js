@@ -1,11 +1,6 @@
-// Importamos los estilos globales
 import '@/assets/main.css'
-
-// Importamos las funciones principales de Vue y Pinia para manejo de estado global
 import { createApp } from 'vue'
 import { createPinia } from 'pinia'
-
-// Importamos el componente raiz de la aplicacion y la instancia del enrutador de Vue Router
 import App from '@/App.vue'
 import router from '@/router'
 

@@ -1,14 +1,14 @@
 <template>
-    <footer>
-        <div class="info">
-            <router-link :to="{name: 'privacy', params: { url: 'privacy-policy' }}" class="router">Privacy policy</router-link>
-            <p>© 2025 - Made with Vue.js</p>
-        </div>
-        <div class="rrss">
-            <a href="https://github.com/Rizquez" target="_blank"><img src="@/assets/images/github.svg" alt="github"></a>
-            <a href="https://www.linkedin.com/in/pedro-rizquez/" target="_blank"><img src="@/assets/images/linkedin.svg" alt="linkedin"></a>
-        </div>
-    </footer>
+  <footer>
+    <div class="info">
+      <router-link :to="{name: 'privacy', params: { url: 'privacy-policy' }}" class="router">Privacy policy</router-link>
+      <p>© 2025 · Pedro Rizquez</p>
+    </div>
+    <div class="rrss">
+      <a href="https://github.com/Rizquez" target="_blank"><img src="@/assets/images/svg/github.svg" alt="github"></a>
+      <a href="https://www.linkedin.com/in/pedro-rizquez/" target="_blank"><img src="@/assets/images/svg/linkedin.svg" alt="linkedin"></a>
+    </div>
+  </footer>
 </template>
 
 <style scoped>
@@ -26,25 +26,29 @@ footer p {
   font-weight: lighter;
   color: var(--text-100);
   font-size: 1.3rem;
-}
-footer .rrss {
-  display: flex;
-  gap: 0.5rem;
-  align-items: end;
-}
-footer .router {
-  text-decoration: none;
-  font-weight: lighter;
-  color: var(--text-100);
-  font-size: 1.3rem;
-}
-footer .router:hover {
-  color: var(--primary-100);
+  margin: 0;
 }
 
 .info {
   display: flex;
   flex-direction: column;
+  gap: 1rem;
+}
+
+.rrss {
+  display: flex;
+  gap: 0.5rem;
+  align-items: end;
+}
+
+.router {
+  text-decoration: none;
+  font-weight: lighter;
+  color: var(--text-100);
+  font-size: 1.3rem;
+}
+.router:hover {
+  color: var(--primary-100);
 }
 
 @media (max-width: 768px) {
@@ -56,12 +60,12 @@ footer .router:hover {
     gap: 1rem;
   }
 
-  .rrss {
-    justify-content: center;
+  .info {
     align-items: center;
   }
 
-  .info {
+  .rrss {
+    justify-content: center;
     align-items: center;
   }
 }
@@ -74,7 +78,8 @@ footer .router:hover {
   footer img {
     max-width: 30px;
   }
-  footer .router, p {
+
+  .router, .info p {
     font-size: 0.9rem;
   }
 }

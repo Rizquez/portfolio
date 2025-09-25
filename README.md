@@ -1,47 +1,97 @@
-# 🌐 Portfolio (web)
-This is my personal/professional portfolio as a software developer. Here I show who I am, my skills, experience and some outstanding projects.
+# 🌐 Portfolio Personal
 
----
+Este proyecto es mi portfolio web personal, desarrollado con Vue.js, para mostrar mi trayectoria profesional, estudios, certificaciones y proyectos destacados.
 
-## 🧪 Portfolio status
-- ✅ Main functionality and responsibility (desktop and mobile) implemented.
-<!-- - ⚠️ Responsibility pending (desktop version optimised, mobile in development). -->
-- 🔜 _Planned improvements_: animations, PWA, internationalisation (i18n).
+## 🧾 Descripcion
 
----
+El portfolio esta diseñado para ser minimalista, rapido y responsive, priorizando la accesibilidad y la experiencia de usuario.
 
-## 🧩 Characteristics
-- Personal presentation page
-- Professional information: experience, stack and specialities
-- Showcase of outstanding projects
-- Functional contact form with validation
-- Privacy policy included
-- Modular design with reusable components (`Vue.js 3`)
+Incluye secciones clave como:
 
----
+- **Home:** Presentacion principal.
+- **Acerca de mi:** Informacion personal, carrera, estudios y certificaciones.
+- **Portfolio:** Proyectos personales y profesionales.
+- **Contacto:** Formulario y enlaces a redes profesionales.
+- **Politica de privacidad:** Pagina informativa para mayor transparencia.
 
-## 💼 Featured projects
+## 🚀 Tecnologias utilizadas
 
-### 🔸 [Jummy](https://jummy-ifp.netlify.app/)
-App to digitise the restaurant experience. Customers can browse the menu, order and pay from their mobile.
-- 🛠️ *Stack:* Python, SQL, JS, HTML, CSS, Auth0
-- 🧩 *Notes:* You need credentials to login (ask me if you want to try it)
-- 🚀 *Deploy:* Netlify, Render, Clever Cloud
+- **Framework:** Vue.js
+- **Lenguajes:** JavaScript, HTML5, CSS3
+- **Despliegue:** Netlify
 
----
+## 📂 Estructura del proyecto
 
-### 🔸 [EcoBalance](https://karla-project.onrender.com/)
-Tool to estimate and analyse CO₂ sequestration by tree species. Promotes sustainable decisions.
-- 🛠️ *Stack:* Python, SQL, JS, HTML, CSS
-- ⏳ *Note:* May take time to load due to cold start.
-- 🚀 *Deploy:* Render
+Los archivos principales se encuentran organizados en:
 
----
+```
+porfolio/
+├── .vscode/...
+├── dist/...
+├── public
+│   ├── _redirects
+│   └── favicon.svg
+├── src
+│   ├── assets
+│   │   ├── images/...
+│   │   └── main.css
+│   ├── components
+│   │   ├── AlertModal.vue              # Modal de alertas
+│   │   ├── BackToTop.vue               # Boton de volver al inicio
+│   │   ├── Footer.vue                  # Pie de pagina con enlaces
+│   │   ├── Head.vue                    # Encabezado y navegacion principal
+│   │   └── Project.vue                 # Componente para mostrar proyectos individuales
+│   ├── router
+│   │   └── index.js
+│   ├── stores
+│   │   └── counter.js
+│   ├── views
+│   │   ├── AboutMeView.vue             # Acerca de mi
+│   │   ├── ContactView.vue             # Contacto
+│   │   ├── HomeView.vue                # Inicio
+│   │   ├── PortfolioView.vue           # Listado de proyectos personales
+│   │   └── PrivacyPolicyView.vue       # Politica de privacidad
+│   ├── App.vue
+│   └── main.js
+├── .editorconfig
+├── .gitattributes
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── jsconfig.json
+├── LICENSE
+├── package-lock.json
+├── package.json
+├── README.md
+└── vite.config.js
+```
 
-## 🔐 Privacy policy
-This site does not store data, nor does it use its own cookies. Only the information from the form is collected to answer queries, without being stored in databases. More information in the `privacy policy` section of the site.
+## 📦 Instalacion y uso (Windows)
 
----
+1. Clonar el repositorio (ssh):
+```sh
+git clone git@github.com:Rizquez/portfolio.git
+cd portfolio
+```
 
-## 📄 Licence
-This project is licensed under the `MIT` licence. You are free to use, modify or share it with proper attribution.
+2. Instalar dependencias:
+```sh
+npm install
+```
+
+3. Ejecutar en entorno de desarrollo:
+```sh
+npm run dev
+```
+
+4. Generar build para produccion:
+```sh
+npm run build
+```
+
+## 🔒 Licencia
+
+Este proyecto esta bajo la licencia `MIT`, lo que permite su uso, distribucion y modificacion con las condiciones especificadas en el archivo `LICENSE`.
+
+## ⚙ Contacto, soporte y desarrollo
+- Pedro Rizquez: pedro.rizquez.94@hotmail.com / +34 633 504 225
