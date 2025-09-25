@@ -1,33 +1,27 @@
 <script setup>
 import { ref } from 'vue'
 
-// Componentes usados en esta vista
-import AlertModal from '@/components/AlertModal.vue'
 import Head from '@/components/Head.vue'
+import AlertModal from '@/components/AlertModal.vue'
 import Footer from '@/components/Footer.vue'
 
 /**
  * Valor del input de email del formulario.
- * @type {import('vue').Ref<string>}
  */
 const email = ref('')
 
 /**
  * Mensaje a mostrar dentro del modal de alerta.
- * @type {import('vue').Ref<string>}
  */
 const modalMessage = ref('')
 
 /**
  * Controla la visibilidad del modal de alerta.
- * @type {import('vue').Ref<boolean>}
  */
 const isModalVisible = ref(false)
 
 /**
  * Cierra el modal de alerta.
- * @function handleModalClose
- * @returns {void}
  */
 const handleModalClose = () => {
   isModalVisible.value = false
@@ -35,7 +29,7 @@ const handleModalClose = () => {
 
 /**
  * Valida el formato de un email usando expresion regular.
- * @function validateEmail
+ * 
  * @param {string} emailString - El email a validar.
  * @returns {boolean} `true` si el email es valido, `false` en caso contrario.
  */
@@ -48,25 +42,26 @@ const validateEmail = (emailString) => {
  * Maneja el envio del formulario:
  * - Valida el email ingresado.
  * - Muestra un mensaje en un modal de alerta dependiendo del resultado.
- * @function handleFormSubmit
- * @returns {void}
  */
 const handleFormSubmit = () => {
   if (validateEmail(email.value)) {
-    modalMessage.value = 'Email sent successfully ✅'
+    modalMessage.value = '✅ Email sent successfully.'
   } else {
-    modalMessage.value = 'Invalid email format, please enter a valid email ❌'
+    modalMessage.value = '⚠️ Invalid email format, please enter a valid email.'
   }
   isModalVisible.value = true
 }
 </script>
 
 <template>
-  <main>
-    <Head/>
+  <main class="page">
+    <Head />
     
-    <section>
+    <section class="page-content">
+      <h1>Contact me</h1>
+      <h2>Send me your inquiry or project and I will respond as soon as possible</h2>
       <form @submit.prevent="handleFormSubmit">
+        <input type="text" placeholder="Name" required>
         <input type="text" placeholder="Email address" v-model="email" required>
         <input type="text" placeholder="Subject" required>
         <textarea name="" id="" cols="50" rows="10" placeholder="Write your message here" required></textarea>
@@ -74,15 +69,29 @@ const handleFormSubmit = () => {
       </form>
     </section>
 
-    <Footer/>
-
+    <Footer />
     <AlertModal :message="modalMessage" :visible="isModalVisible" @close="handleModalClose"/>
   </main>
 </template>
 
 <style scoped>
+h1, h2 {
+  color: var(--primary-100);
+  text-align: center;
+}
+
+h1 {
+  font-weight: 500;
+  font-size: 2.5rem;
+}
+
+h2 {
+  font-weight: lighter;
+  font-size: 1.5rem;
+}
+
 form {
-  padding-top: 100px;
+  padding-top: 20px;
   width: 800px;
   margin: 0 auto;
   display: flex;
@@ -110,25 +119,18 @@ form button:hover {
   background-color: var(--primary-300);
 }
 
-main {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-  width: 100%;
-}
-
-main > * {
-  flex-shrink: 0;
-}
-
-main > :last-child {
-  margin-top: auto;
-}
-
 @media (max-width: 1000px) {
   form {
     width: 600px;
     font-size: 1.2rem;
+  }
+
+  h1 {
+    font-size: 2.3rem;
+  }
+
+  h2 {
+    font-size: 1.3rem;
   }
 }
 
@@ -146,6 +148,15 @@ main > :last-child {
   form textarea {
     height: 200px;
   }
+
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+    padding: 0px 20px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -155,16 +166,18 @@ main > :last-child {
     padding-top: 60px;
     gap: 0.8rem;
   }
-
   form textarea,
   form input[type="text"],
   form button {
     padding: 6px;
     font-size: 0.95rem;
   }
-
   form textarea {
     height: 150px;
+  }
+
+  h1 {
+    font-size: 1.8rem;
   }
 }
 </style>

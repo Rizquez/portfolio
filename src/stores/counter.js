@@ -3,7 +3,8 @@ import { defineStore } from 'pinia'
 
 /**
  * Pinia store para el contador.
- * Maneja un valor numerico con un contador simple, su doble y una funcion para incrementarlo.
+ * Maneja un valor numerico con un contador simple, 
+ * su doble y una funcion para incrementarlo.
  */
 export const useCounterStore = defineStore('counter', () => {
   const count = ref(0)

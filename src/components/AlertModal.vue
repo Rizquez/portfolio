@@ -1,12 +1,14 @@
 <script setup>
 /**
  * Emite eventos personalizados del componente.
+ * 
  * @event close - Se emite cuando el usuario acepta o cierra el componente.
  */
 const emit = defineEmits(['close'])
 
 /**
  * Propiedades recibidas por el componente. 
+ * 
  * @prop {string} message - El mensaje que se mostrara al usuario.
  * @prop {boolean} visible - Indica si el componente debe mostrarse o no.
  */
@@ -23,8 +25,6 @@ const props = defineProps({
 
 /**
  * Maneja la accion del usuario al aceptar, disparando el evento 'close'.
- * @function handleAccept
- * @returns {void}
  */
 const handleAccept = () => {
   emit('close')
@@ -69,8 +69,7 @@ const handleAccept = () => {
   font-size: 1.3rem;
   color: var(--text-100);
 }
-
-button {
+.modal button {
   color: var(--primary-300);
   background-color: var(--primary-100);
   padding: 10px 35px;
@@ -80,7 +79,7 @@ button {
   text-decoration: none;
   font-size: 1.3rem;
 }
-button:hover {
+.modal button:hover {
   color: var(--primary-100);
   background-color: var(--primary-300);
 }
@@ -93,8 +92,7 @@ button:hover {
   .modal p {
     font-size: 0.95rem;
   }
-
-  button {
+  .modal button {
     padding: 10px 25px;
     font-size: 0.95rem;
   }
@@ -109,10 +107,9 @@ button:hover {
     font-size: 0.9rem;
   }
 
-  button {
+  .modal button {
     padding: 8px 20px;
     font-size: 0.9rem;
   }
 }
 </style>
-  
