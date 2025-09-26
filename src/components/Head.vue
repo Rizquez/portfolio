@@ -39,7 +39,7 @@ header img {
   text-decoration: none;
   font-weight: lighter;
   color: var(--text-100);
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   cursor: pointer;
 }
 .router:hover {
@@ -52,10 +52,6 @@ header img {
   }
   header img {
     max-width: 130px;
-  }
-
-  .router {
-    font-size: 1rem;
   }
 }
 
@@ -73,6 +69,10 @@ header img {
     flex-direction: row;
     gap: 2rem;
     justify-content: center;
+  }
+
+  .router {
+    font-size: 1.1rem;
   }
 }
 

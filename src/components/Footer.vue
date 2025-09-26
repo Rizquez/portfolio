@@ -25,7 +25,6 @@ footer img {
 footer p {
   font-weight: lighter;
   color: var(--text-100);
-  font-size: 1.3rem;
   margin: 0;
 }
 
@@ -45,10 +44,13 @@ footer p {
   text-decoration: none;
   font-weight: lighter;
   color: var(--text-100);
-  font-size: 1.3rem;
 }
 .router:hover {
   color: var(--primary-100);
+}
+
+.router, .info, p {
+  font-size: 1.2rem;
 }
 
 @media (max-width: 768px) {
@@ -68,6 +70,10 @@ footer p {
     justify-content: center;
     align-items: center;
   }
+
+  .router, .info, p {
+    font-size: 1.1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -80,7 +86,7 @@ footer p {
   }
 
   .router, .info p {
-    font-size: 0.9rem;
+    font-size: 0.95rem;
   }
 }
 </style>

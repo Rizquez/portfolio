@@ -27,11 +27,11 @@ const props = defineProps({
 <template>
   <div>
     <h4>{{ title }}</h4>
-    <img :src="imgSrc" :alt="imgAlt || title">
+    <img class="cover" :src="imgSrc" :alt="imgAlt || title">
     <p>{{ description }}</p>
     <p><span>Technologies:</span> {{ technologies }}</p>
     <p class="note"><span>Note:</span> {{ note }}</p>
-    <a :href="linkHref" target="_blank" rel="noopener noreferrer">{{ linkLabel }}</a>
+    <a :href="linkHref" target="_blank" rel="noopener noreferrer">{{ linkLabel }} <span class="icon-mask" aria-hidden="true"></span></a>
   </div>
 </template>
 
@@ -53,12 +53,6 @@ h4 {
   text-align: center;
 }
 
-img {
-  width: 100%;
-  max-width: 500px;
-  height: auto;
-}
-
 p, a {
   font-size: 1rem;
   font-weight: lighter;
@@ -75,7 +69,8 @@ a {
   text-decoration: none;
   color: var(--primary-100);
 }
-a:hover {
+a:hover,
+.ext-link:hover {
   color: var(--primary-200);
 }
 
@@ -83,8 +78,36 @@ span {
   font-weight: bold;
 }
 
+.cover {
+  width: 100%;
+  max-width: 500px;
+  height: auto;
+}
+
 .note {
   font-style: oblique;
+}
+
+.ext-link{
+  text-align: right;
+  padding-top: 20px;
+  text-decoration: none;
+  color: var(--primary-100);
+  display: inline-flex;
+  align-items: baseline;
+  gap: .35em;
+  line-height: 1.4;
+}
+
+.icon-mask {
+  width: 1em;
+  height: 1em;
+  background-color: currentColor;
+  -webkit-mask: url('@/assets/images/svg/open-in.svg') no-repeat center / contain;
+  mask: url('@/assets/images/svg/open-in.svg') no-repeat center / contain;
+  vertical-align: -0.2em;
+  display: inline-block;
+  flex: 0 0 auto;
 }
 
 @media (max-width: 1000px) {
