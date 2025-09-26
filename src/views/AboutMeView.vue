@@ -4,10 +4,10 @@ import Footer from '@/components/Footer.vue'
 </script>
 
 <template>
-  <main>
+  <main class="page">
     <Head />
 
-    <section class="about-me">
+    <section class="page-content about-me">
       <h1>About me</h1>
       <p>I am a software developer passionate about solving complex problems and transforming ideas into solutions that truly add value. I am motivated by curiosity and continuous learning, always looking for new ways to optimize processes and make technology more accessible and useful for people. I firmly believe that every project is an opportunity to grow as a professional and, at the same time, to contribute positively to the environment in which it is applied.</p>
       <p>I currently work as a <span>Senior Software Developer at LETSMEP</span>, where I lead the development of automated solutions and cloud infrastructure management with <span>Azure</span> and <span>Autodesk Platform Services (Forge)</span>. My experience includes implementing CI/CD pipelines, designing custom tools to optimize technical processes, and coordinating cross-functional teams. Previously, I was a <span>Python Developer at JSS Efficient Engineering</span>, where I focused on creating tools to improve operational efficiency through automation and custom reporting.</p>
