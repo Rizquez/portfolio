@@ -1,7 +1,7 @@
 <template>
   <footer>
     <div class="info">
-      <router-link :to="{name: 'privacy', params: { url: 'privacy-policy' }}" class="router">Privacy policy</router-link>
+      <router-link :to="{name: 'privacy'}" class="router">Privacy policy</router-link>
       <p>© 2025 · Pedro Rizquez</p>
     </div>
     <div class="rrss">
