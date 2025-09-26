@@ -1,17 +1,61 @@
 <script setup>
 import { ref } from 'vue'
+import emailjs from '@emailjs/browser'
 
 import Head from '@/components/Head.vue'
-import AlertModal from '@/components/AlertModal.vue'
 import Footer from '@/components/Footer.vue'
+import AlertModal from '@/components/AlertModal.vue'
 
 /**
- * Valor del input de email del formulario.
+ * ID del servicio configurado en EmailJS.
+ * 
+ * Se obtiene en el panel de EmailJS dentro de la seccion "Email Services".
  */
-const email = ref('')
+const SERVICE_ID = 'service_4go4bqq'
 
 /**
- * Mensaje a mostrar dentro del modal de alerta.
+ * ID de la plantilla de correo creada en EmailJS.
+ * 
+ * Define el subject y el body usando placeholders como {{name}}, {{email}}, {{message}}.
+ */
+const TEMPLATE_ID = 'template_b0tny8r'
+
+/**
+ * Clave publica proporcionada por EmailJS para autenticar las peticiones desde el cliente. 
+ * 
+ * Es segura de exponer en el frontend.
+ */
+const PUBLIC_KEY  = 'kuTMf8Ax5bYS7e0_d'
+
+/**
+ * Nombre del remitente ingresado en el formulario.
+ */
+const name = ref('')
+
+/**
+ * Direccion de correo del remitente ingresada en el formulario.
+ */
+const email = ref('')   
+
+/**
+ * Asunto del mensaje ingresado en el formulario.
+ */
+const subject = ref('')
+
+/**
+ * Contenido principal del mensaje escrito en el formulario.
+ */
+const message = ref('')
+
+/**
+ * Campo honeypot oculto en el formulario.
+ * 
+ * Se utiliza como tecnica anti-spam: si este campo tiene contenido, se asume que el envio proviene de un bot.
+ */
+const honeypot = ref('')
+
+/**
+ * Mensaje mostrado dentro del modal de alerta (feedback al usuario tras validar o enviar el formulario).
  */
 const modalMessage = ref('')
 
@@ -21,17 +65,26 @@ const modalMessage = ref('')
 const isModalVisible = ref(false)
 
 /**
+ * Estado de carga al enviar el formulario.
+ * 
+ * Mientras sea `true`, los inputs y el boton se deshabilitan para evitar envios multiples.
+ */
+const loading = ref(false)
+
+/**
  * Cierra el modal de alerta.
+ * 
+ * Se ejecuta cuando el usuario hace clic en el boton de cierre.
  */
 const handleModalClose = () => {
   isModalVisible.value = false
 }
 
 /**
- * Valida el formato de un email usando expresion regular.
+ * Valida el formato de un email utilizando una expresion regular basica.
  * 
- * @param {string} emailString - El email a validar.
- * @returns {boolean} `true` si el email es valido, `false` en caso contrario.
+ * @param emailString - La direccion de correo a validar.
+ * @returns `true` si el email tiene un formato valido, `false` en caso contrario.
  */
 const validateEmail = (emailString) => {
   const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
@@ -39,17 +92,47 @@ const validateEmail = (emailString) => {
 }
 
 /**
- * Maneja el envio del formulario:
- * - Valida el email ingresado.
- * - Muestra un mensaje en un modal de alerta dependiendo del resultado.
+ * Maneja el envio del formulario de contacto:
+ * - Evita envios de bots verificando el honeypot.
+ * - Valida que los campos requeridos esten completos y correctos.
+ * - Envia los datos a traves de EmailJS usando el servicio, plantilla y clave publica configurados.
+ * - Muestra un mensaje de exito o error en el modal de alerta.
  */
-const handleFormSubmit = () => {
-  if (validateEmail(email.value)) {
-    modalMessage.value = '✅ Email sent successfully.'
-  } else {
-    modalMessage.value = '⚠️ Invalid email format, please enter a valid email.'
+const handleFormSubmit = async () => {
+  if (honeypot.value) return 
+
+  if (!validateEmail(email.value) || !name.value.trim() || !subject.value.trim() || !message.value.trim()) {
+    modalMessage.value = '⚠️ Review the fields: fill in everything and verify your email address'
+    isModalVisible.value = true
+    return
   }
-  isModalVisible.value = true
+
+  loading.value = true
+  try {
+    const params = {
+      name: name.value,
+      email: email.value,
+      subject: subject.value,
+      message: message.value
+    }
+
+    const res = await emailjs.send(SERVICE_ID, TEMPLATE_ID, params, { publicKey: PUBLIC_KEY })
+
+    if (res.status === 200) {
+      modalMessage.value = '✅ Message sent, I will reply as soon as possible'
+      name.value = ''
+      email.value = ''
+      subject.value = ''
+      message.value = ''
+    } else {
+      modalMessage.value = '❌ The message could not be sent, please try again later.'
+    }
+  } catch (e) {
+    modalMessage.value = '❌ Error sending email, please contact me directly at pedro.rizquez.94@hotmail.com'
+  } finally {
+    loading.value = false
+    isModalVisible.value = true
+  }
 }
 </script>
 
@@ -60,12 +143,13 @@ const handleFormSubmit = () => {
     <section class="page-content">
       <h1>Contact me</h1>
       <h2>Send me your inquiry or project and I will respond as soon as possible</h2>
-      <form @submit.prevent="handleFormSubmit">
-        <input type="text" placeholder="Name" required>
-        <input type="text" placeholder="Email address" v-model="email" required>
-        <input type="text" placeholder="Subject" required>
-        <textarea name="" id="" cols="50" rows="10" placeholder="Write your message here" required></textarea>
-        <button type="submit">Send message</button>
+      <form @submit.prevent="handleFormSubmit" novalidate>
+        <input v-model="honeypot" class="anti-spam" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
+        <input type="text" placeholder="Name" v-model.trim="name" required :disabled="loading">
+        <input type="email" placeholder="Email address" v-model.trim="email" required :disabled="loading">
+        <input type="text" placeholder="Subject" v-model.trim="subject" required :disabled="loading">
+        <textarea cols="50" rows="10" placeholder="Write your message here" v-model.trim="message" required :disabled="loading"></textarea>
+        <button type="submit" :disabled="loading">{{ loading ? 'Sending…' : 'Send message' }}</button>
       </form>
     </section>
 
@@ -102,6 +186,7 @@ form {
 }
 form textarea,
 form input[type="text"],
+form input[type="email"],
 form button {
   padding: 10px;
   border-radius: 10px;
@@ -117,6 +202,10 @@ form button {
 form button:hover {
   color: var(--primary-100);
   background-color: var(--primary-300);
+}
+
+.anti-spam {
+  display:none !important;
 }
 
 @media (max-width: 1000px) {
