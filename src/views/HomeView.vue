@@ -21,7 +21,7 @@ import Footer from '@/components/Footer.vue';
 <style scoped>
 
 .home {
-  padding: 100px;
+  padding: 100px 100px 0px;
 }
 
 h1, h2 {

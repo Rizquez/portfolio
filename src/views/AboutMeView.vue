@@ -79,15 +79,21 @@ span {
   font-weight: 500;
 }
 
-@media (max-width: 1200px) {
+@media (max-width: 1600px) {
   .about-me {
     padding: 0px 200px;
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .about-me {
     padding: 0px 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  .about-me {
+    padding: 0px 30px;
   }
 
   h1 {
