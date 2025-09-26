@@ -10,9 +10,9 @@
 
     <div class="routers">
       <router-link :to="{ name: 'home'}" class="router">Home</router-link>
-      <router-link :to="{ name: 'about', params: { url: 'about' }}" class="router">About</router-link>
-      <router-link :to="{ name: 'portfolio', params: { url: 'portfolio' }}" class="router">Portfolio</router-link>
-      <router-link :to="{ name: 'contact', params: { url: 'contact' }}" class="router">Contact</router-link>
+      <router-link :to="{ name: 'about'}" class="router">About</router-link>
+      <router-link :to="{ name: 'portfolio'}" class="router">Portfolio</router-link>
+      <router-link :to="{ name: 'contact'}" class="router">Contact</router-link>
     </div>
   </header>
 </template>

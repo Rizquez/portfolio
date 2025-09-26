@@ -8,27 +8,32 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: () => import('@/views/HomeView.vue')
+    component: () => import('@/views/HomeView.vue'),
+    meta: { title: 'Home' }
   },
   {
-    path: '/:url',
+    path: '/portfolio',
     name: 'portfolio',
-    component: () => import('@/views/PortfolioView.vue')
+    component: () => import('@/views/PortfolioView.vue'),
+    meta: { title: 'Portfolio' }
   },
   {
-    path: '/:url',
+    path: '/about',
     name: 'about',
-    component: () => import('@/views/AboutMeView.vue')
+    component: () => import('@/views/AboutMeView.vue'),
+    meta: { title: 'About' }
   },
   {
-    path: '/:url',
+    path: '/contact',
     name: 'contact',
-    component: () => import('@/views/ContactView.vue')
+    component: () => import('@/views/ContactView.vue'),
+    meta: { title: 'Contact' }
   },
   {
-    path: '/:url',
+    path: '/privacy-policy',
     name: 'privacy',
-    component: () => import('@/views/PrivacyPolicyView.vue')
+    component: () => import('@/views/PrivacyPolicyView.vue'),
+    meta: { title: 'Privacy policy' }
   }
 ]
 
@@ -40,5 +45,16 @@ const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
   routes
 });
+
+/**
+ * Este hook toma el valor de `meta.title` definido en la ruta de destino 
+ * (`to.meta?.title`) y lo asigna al titulo del documento (`document.title`).
+ * De esta forma, el contenido de la pestaña del navegador se actualiza 
+ * dinamicamente en funcion de la ruta visitada.
+ */
+router.afterEach((to) => {
+  const title = to.meta?.title
+  document.title = `Pedro Rizquez | ${title}`
+})
 
 export default router
