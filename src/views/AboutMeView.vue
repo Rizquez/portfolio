@@ -1,11 +1,11 @@
 <script setup>
-import Head from '@/components/Head.vue'
-import Footer from '@/components/Footer.vue'
+import MainHeader from '@/components/MainHeader.vue'
+import MainFooter from '@/components/MainFooter.vue'
 </script>
 
 <template>
   <main class="page">
-    <Head />
+    <MainHeader />
 
     <section class="page-content about-me">
       <h1>About me</h1>
@@ -31,7 +31,7 @@ import Footer from '@/components/Footer.vue'
       <h3>Passionate about building efficient solutions through code</h3>
     </section>
 
-    <Footer />
+    <MainFooter />
   </main>
 </template>
 
