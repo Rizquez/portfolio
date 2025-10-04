@@ -1,10 +1,10 @@
 <script setup>
-import Head from '@/components/Head.vue';
-import Footer from '@/components/Footer.vue';
+import MainHeader from '@/components/MainHeader.vue';
+import MainFooter from '@/components/MainFooter.vue';
 import Project from '@/components/Project.vue';
 
-import jummyImg from '@/assets/images/png/Jummy.png';
-import ecoBalanceImg from '@/assets/images/png/EcoBalance.png';
+import jummyImg from '@/assets/images/png/jummy.png';
+import ecoBalanceImg from '@/assets/images/png/ecobalance.png';
 
 /**
  * Objeto con la informacion del proyecto Jummy.
@@ -55,7 +55,7 @@ const ecoBalance = {
 
 <template>
   <main>
-    <Head />
+    <MainHeader />
 
     <section>
       <h1>Portfolio</h1>
@@ -65,7 +65,7 @@ const ecoBalance = {
       </div>
     </section>
 
-    <Footer />
+    <MainFooter />
   </main>
 </template>
 

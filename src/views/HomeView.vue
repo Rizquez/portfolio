@@ -1,20 +1,20 @@
 <script setup>
-import Head from '@/components/Head.vue';
-import Footer from '@/components/Footer.vue';
+import MainHeader from '@/components/MainHeader.vue';
+import MainFooter from '@/components/MainFooter.vue';
 </script>
 
 <template>
   <main class="page">
-    <Head />
+    <MainHeader />
     
     <section class="page-content home">
       <h1>Hi! I'm Pedro Rizquez</h1>
-      <h2>Software developer specializing in Python, Azure, and automation</h2>
-      <h3>I design and build efficient solutions that simplify processes and generate real impact</h3>
+      <h2>Software developer specializing in automation and efficiency</h2>
+      <h3>I design and build efficient and reliable systems that simplify workflows and make a real impact</h3>
       <h4>Code that optimises, solutions that transform</h4>
     </section>
 
-    <Footer />
+    <MainFooter />
   </main>
 </template>
 

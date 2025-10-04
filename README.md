@@ -38,8 +38,8 @@ porfolio/
 │   ├── components
 │   │   ├── AlertModal.vue              # Modal de alertas
 │   │   ├── BackToTop.vue               # Boton de volver al inicio
-│   │   ├── Footer.vue                  # Pie de pagina con enlaces
-│   │   ├── Head.vue                    # Encabezado y navegacion principal
+│   │   ├── MainFooter.vue              # Pie de pagina con enlaces
+│   │   ├── MainHeader.vue              # Encabezado y navegacion principal
 │   │   └── Project.vue                 # Componente para mostrar proyectos individuales
 │   ├── router
 │   │   └── index.js

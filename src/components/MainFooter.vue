@@ -2,7 +2,7 @@
   <footer>
     <div class="info">
       <router-link :to="{name: 'privacy'}" class="router">Privacy policy</router-link>
-      <p>© 2025 · Pedro Rizquez</p>
+      <p>© 2025 · Built with <a href="https://vuejs.org" target="_blank" class="router">Vue.js</a></p>
     </div>
     <div class="rrss">
       <a href="https://github.com/Rizquez" target="_blank"><img src="@/assets/images/svg/github.svg" alt="github"></a>
@@ -22,10 +22,13 @@ footer {
 footer img {
   max-width: 40px;
 }
-footer p {
+footer p, footer a {
   font-weight: lighter;
   color: var(--text-100);
   margin: 0;
+}
+footer a {
+  text-decoration: none;
 }
 
 .info {

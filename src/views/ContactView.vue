@@ -2,8 +2,8 @@
 import { ref } from 'vue'
 import emailjs from '@emailjs/browser'
 
-import Head from '@/components/Head.vue'
-import Footer from '@/components/Footer.vue'
+import MainHeader from '@/components/MainHeader.vue'
+import MainFooter from '@/components/MainFooter.vue'
 import AlertModal from '@/components/AlertModal.vue'
 
 /**
@@ -55,6 +55,16 @@ const message = ref('')
 const honeypot = ref('')
 
 /**
+ * Indicador de envío del formulario.
+ */
+const submitted = ref(false)
+
+/**
+ * Referencia al elemento <form> del template.
+ */
+const formElements = ref(null)
+
+/**
  * Mensaje mostrado dentro del modal de alerta (feedback al usuario tras validar o enviar el formulario).
  */
 const modalMessage = ref('')
@@ -81,17 +91,6 @@ const handleModalClose = () => {
 }
 
 /**
- * Valida el formato de un email utilizando una expresion regular basica.
- * 
- * @param emailString - La direccion de correo a validar.
- * @returns `true` si el email tiene un formato valido, `false` en caso contrario.
- */
-const validateEmail = (emailString) => {
-  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
-  return regex.test(emailString)
-}
-
-/**
  * Maneja el envio del formulario de contacto:
  * - Evita envios de bots verificando el honeypot.
  * - Valida que los campos requeridos esten completos y correctos.
@@ -101,8 +100,11 @@ const validateEmail = (emailString) => {
 const handleFormSubmit = async () => {
   if (honeypot.value) return 
 
-  if (!validateEmail(email.value) || !name.value.trim() || !subject.value.trim() || !message.value.trim()) {
-    modalMessage.value = '⚠️ Review the fields: fill in everything and verify your email address'
+  submitted.value = true // Marcar como enviado para activar estilos
+
+  // Usa validacion nativa HTML5 (required, type="email", etc)
+  if (!formElements.value?.checkValidity()) {
+    modalMessage.value = '⚠️ Review the fields: fill in everything and verify that your email address is valid'
     isModalVisible.value = true
     return
   }
@@ -116,18 +118,19 @@ const handleFormSubmit = async () => {
       message: message.value
     }
 
-    const res = await emailjs.send(SERVICE_ID, TEMPLATE_ID, params, { publicKey: PUBLIC_KEY })
+    const response = await emailjs.send(SERVICE_ID, TEMPLATE_ID, params, { publicKey: PUBLIC_KEY })
 
-    if (res.status === 200) {
+    if (response.status === 200) {
       modalMessage.value = '✅ Message sent, I will reply as soon as possible'
       name.value = ''
       email.value = ''
       subject.value = ''
       message.value = ''
+      submitted.value = false // Reinicia el estado de enviado para ocultar marcas rojas
     } else {
       modalMessage.value = '❌ The message could not be sent, please try again later.'
     }
-  } catch (e) {
+  } catch (_) {
     modalMessage.value = '❌ Error sending email, please contact me directly at pedro.rizquez.94@hotmail.com'
   } finally {
     loading.value = false
@@ -138,12 +141,12 @@ const handleFormSubmit = async () => {
 
 <template>
   <main class="page">
-    <Head />
+    <MainHeader />
     
     <section class="page-content">
       <h1>Contact me</h1>
       <h2>Send me your inquiry or project and I will respond as soon as possible</h2>
-      <form @submit.prevent="handleFormSubmit" novalidate>
+      <form ref="formElements" @submit.prevent="handleFormSubmit" novalidate :class="{ submitted }">
         <input v-model="honeypot" class="anti-spam" type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" />
         <input type="text" placeholder="Name" v-model.trim="name" required :disabled="loading">
         <input type="email" placeholder="Email address" v-model.trim="email" required :disabled="loading">
@@ -153,7 +156,7 @@ const handleFormSubmit = async () => {
       </form>
     </section>
 
-    <Footer />
+    <MainFooter />
     <AlertModal :message="modalMessage" :visible="isModalVisible" @close="handleModalClose"/>
   </main>
 </template>
@@ -202,6 +205,14 @@ form button {
 form button:hover {
   color: var(--primary-100);
   background-color: var(--primary-300);
+}
+form.submitted input:invalid,
+form.submitted select:invalid,
+form.submitted textarea:invalid {
+  border: 2px solid var(--form-no-valid);
+  outline: none;
+  box-shadow: 0 0 4px var(--form-no-valid);
+  border-radius: 10px;
 }
 
 .anti-spam {
