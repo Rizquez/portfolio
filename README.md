@@ -27,10 +27,9 @@ Los archivos principales se encuentran organizados en:
 ```
 porfolio/
 ├── .vscode/...
-├── dist/...
 ├── public
 │   ├── _redirects
-│   └── favicon.svg
+│   └── favicon.ico
 ├── src
 │   ├── assets
 │   │   ├── images/...
@@ -82,11 +81,6 @@ npm install
 3. Ejecutar en entorno de desarrollo:
 ```sh
 npm run dev
-```
-
-4. Generar build para produccion:
-```sh
-npm run build
 ```
 
 ## 🔒 Licencia
