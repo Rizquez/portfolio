@@ -3,8 +3,8 @@ import MainHeader from '@/components/MainHeader.vue';
 import MainFooter from '@/components/MainFooter.vue';
 import Project from '@/components/Project.vue';
 
-import jummyImg from '@/assets/images/png/jummy.png';
-import ecoBalanceImg from '@/assets/images/png/ecobalance.png';
+import jummyImg from '@/assets/images/png/Jummy.png';
+import ecoBalanceImg from '@/assets/images/png/EcoBalance.png';
 
 /**
  * Objeto con la informacion del proyecto Jummy.
