@@ -3,6 +3,7 @@ import MainHeader from '@/components/MainHeader.vue';
 import MainFooter from '@/components/MainFooter.vue';
 import Project from '@/components/Project.vue';
 
+import common from '@/assets/images/png/Common.png'
 import jummyImg from '@/assets/images/png/Jummy.png';
 import ecoBalanceImg from '@/assets/images/png/EcoBalance.png';
 
@@ -18,15 +19,15 @@ import ecoBalanceImg from '@/assets/images/png/EcoBalance.png';
  * @property {string} linkLabel    Text of the link to access the resource.
  * @property {string} linkHref     URL of the external resource (e.g., repository).
  */
-const jummy = {
-  title: 'Jummy',
-  imgSrc: jummyImg,
-  imgAlt: 'Jummy app logo',
-  description: 'App to digitise the restaurant experience, allowing customers to browse menus, manage orders and pay from their mobile. It optimises restaurant operations and improves the user experience.',
-  technologies: 'Python, SQL, JavaScript, HTML, CSS, Auth0, Netlify, Render, Clever Cloud.',
-  note: 'This project has been archived.',
+const autodocmind = {
+  title: 'AutoDocMind ',
+  imgSrc: common,
+  imgAlt: 'Common app logo',
+  description: 'AutoDocMind is a tool that automatically analyzes code repositories to generate clear and useful documentation. It combines static code analysis with natural language processing to provide a comprehensive overview of the project, its dependencies, and its internal structure.',
+  technologies: 'Python - AI',
+  note: 'This project is currently under development and is ready to be executed through the console terminal.',
   linkLabel: 'Browse the repository',
-  linkHref: 'https://github.com/Rizquez/Jummy'
+  linkHref: 'https://github.com/Rizquez/AutoDocMind'
 }
 
 /**
@@ -51,6 +52,29 @@ const ecoBalance = {
   linkLabel: 'Browse the repository',
   linkHref: 'https://github.com/Rizquez/eco_balance'
 }
+
+/**
+ * Object containing Jummy project information.
+ * 
+ * @property {string} title        Project name.
+ * @property {string} imgSrc       Path or import of the representative image.
+ * @property {string} imgAlt       Alternative text for the image (accessibility).
+ * @property {string} description  General description of the project.
+ * @property {string} technologies Technologies used in the project.
+ * @property {string} note         Explanatory note or project status.
+ * @property {string} linkLabel    Text of the link to access the resource.
+ * @property {string} linkHref     URL of the external resource (e.g., repository).
+ */
+const jummy = {
+  title: 'Jummy',
+  imgSrc: jummyImg,
+  imgAlt: 'Jummy app logo',
+  description: 'App to digitise the restaurant experience, allowing customers to browse menus, manage orders and pay from their mobile. It optimises restaurant operations and improves the user experience.',
+  technologies: 'Python, SQL, JavaScript, HTML, CSS, Auth0, Netlify, Render, Clever Cloud.',
+  note: 'This project has been archived.',
+  linkLabel: 'Browse the repository',
+  linkHref: 'https://github.com/Rizquez/Jummy'
+}
 </script>
 
 <template>
@@ -60,8 +84,11 @@ const ecoBalance = {
     <section>
       <h1>Portfolio</h1>
       <div class="projects">
-        <Project v-bind="jummy" />
+        <Project v-bind="autodocmind" />
         <Project v-bind="ecoBalance" />
+      </div>
+      <div class="projects">
+        <Project v-bind="jummy" />
       </div>
     </section>
 
