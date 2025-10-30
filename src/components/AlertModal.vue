@@ -1,16 +1,16 @@
 <script setup>
 /**
- * Emite eventos personalizados del componente.
+ * Emits custom events from the component.
  * 
- * @event close - Se emite cuando el usuario acepta o cierra el componente.
+ * @event close - Emitted when the user accepts or closes the component.
  */
 const emit = defineEmits(['close'])
 
 /**
- * Propiedades recibidas por el componente. 
+ * Properties received by the component. 
  * 
- * @prop {string} message - El mensaje que se mostrara al usuario.
- * @prop {boolean} visible - Indica si el componente debe mostrarse o no.
+ * @prop {string} message - The message to be displayed to the user.
+ * @prop {boolean} visible - Indicates whether the component should be displayed or not.
  */
 const props = defineProps({
   message: {
@@ -24,7 +24,7 @@ const props = defineProps({
 })
 
 /**
- * Maneja la accion del usuario al aceptar, disparando el evento 'close'.
+ * Handles the user's action when accepting, triggering the ‘close’ event.
  */
 const handleAccept = () => {
   emit('close')

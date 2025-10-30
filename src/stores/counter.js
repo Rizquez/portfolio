@@ -2,9 +2,10 @@ import { ref, computed } from 'vue'
 import { defineStore } from 'pinia'
 
 /**
- * Pinia store para el contador.
- * Maneja un valor numerico con un contador simple, 
- * su doble y una funcion para incrementarlo.
+ * Pinia store for the counter.
+ * 
+ * Handles a numeric value with a simple counter, 
+ * its double, and a function to increment it.
  */
 export const useCounterStore = defineStore('counter', () => {
   const count = ref(0)

@@ -1,10 +1,10 @@
 /********************************************
-Importacion de las fuentes desde googles
+Importing fonts from Google
 ********************************************/
 @import url('https://fonts.googleapis.com/css2?family=Rubik:wght@300;400;500;700&display=swap');
 
 /********************************************
-Colores bases sobre todos los estilos
+Base colors for all styles
 ********************************************/
 :root {
   --primary-100:#E7D1BB;
@@ -21,7 +21,7 @@ Colores bases sobre todos los estilos
 }
 
 /********************************************
-Configuracion base sobre body y el html
+Basic configuration for body and HTML
 ********************************************/
 html {
   min-height: 100%;
@@ -48,7 +48,7 @@ body {
 }
 
 /********************************************
-Configuracion base sobre las animaciones
+Basic settings for animations
 ********************************************/
 @keyframes fadeInUp {
   from {

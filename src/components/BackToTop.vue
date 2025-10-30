@@ -2,23 +2,23 @@
 import { ref, onMounted, onUnmounted } from 'vue'
 
 /**
- * Indica si el boton para volver al principio debe mostrarse.
+ * Indicates whether the button to return to the top should be displayed.
  * 
- * Se activa cuando el usuario ha hecho scroll mas de 100 pixeles.
+ * Activated when the user has scrolled more than 100 pixels.
  */
 const isVisible = ref(false)
 
 /**
- * Maneja el evento de scroll para mostrar u ocultar el boton.
+ * Handles the scroll event to show or hide the button.
  * 
- * Si el scroll vertical supera los 100px, se activa `isVisible`.
+ * If the vertical scroll exceeds 100px, `isVisible` is activated.
  */
 const handleScroll = () => {
   isVisible.value = window.scrollY > 100
 }
 
 /**
- * Realiza un scroll suave hacia la parte superior de la pagina.
+ * Gently scroll to the top of the page.
  */
 const scrollToTop = () => {
   window.scrollTo({
@@ -28,14 +28,14 @@ const scrollToTop = () => {
 }
 
 /**
- * Agrega el event listener de scroll al montar el componente.
+ * Add the scroll event listener when mounting the component.
  */
 onMounted(() => {
   window.addEventListener('scroll', handleScroll)
 })
 
 /**
- * Elimina el event listener de scroll al desmontar el componente.
+ * Remove the scroll event listener when unmounting the component.
  */
 onUnmounted(() => {
   window.removeEventListener('scroll', handleScroll)
