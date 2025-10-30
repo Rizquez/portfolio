@@ -1,16 +1,15 @@
 <script setup>
-
 /**
- * Props del componente ProjectItem.
+ * Props of the ProjectItem component.
  * 
- * @prop {string} title        Titulo del proyecto que se mostrara en un <h4>.
- * @prop {string} imgSrc       Ruta o import de la imagen del proyecto.
- * @prop {string} imgAlt       Texto alternativo para la imagen (accesibilidad).
- * @prop {string} description  Descripcion principal del proyecto.
- * @prop {string} technologies Texto con la lista de tecnologias usadas en el proyecto.
- * @prop {string} note         Nota adicional, como estado del proyecto o aclaraciones.
- * @prop {string} linkLabel    Texto que se mostrara en el enlace (ej: "Browse the repository").
- * @prop {string} linkHref     URL del enlace externo (ej: repositorio, demo, etc).
+ * @prop {string} title        Project title to be displayed in an <h4>.
+ * @prop {string} imgSrc       Path or import of the project image.
+ * @prop {string} imgAlt       Alternative text for the image (accessibility).
+ * @prop {string} description  Main description of the project.
+ * @prop {string} technologies Text with the list of technologies used in the project.
+ * @prop {string} note         Additional note, such as project status or clarifications.
+ * @prop {string} linkLabel    Text to be displayed in the link (e.g., "Browse the repository").
+ * @prop {string} linkHref     URL of the external link (e.g., repository, demo, etc.).
  */
 const props = defineProps({
   title: { type: String, required: true },

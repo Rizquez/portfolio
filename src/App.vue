@@ -3,23 +3,23 @@ import BackToTop from '@/components/BackToTop.vue'
 
 export default {
   /**
-   * Nombre del componente raiz de la aplicacion
+   * Name of the root component of the application.
    */
   name: 'App', 
   /**
-   * Componentes registrados localmente
+   * Locally registered components.
    */
   components: {
     BackToTop,
   },
   watch: {
     /**
-     * Observa los cambios de ruta.
+     * Observe route changes.
      * 
-     * Al cambiar de ruta, se ejecuta scroll hacia el tope de la pagina.
+     * When changing routes, scroll to the top of the page.
      * 
-     * @param to - Nueva ruta.
-     * @param from - Ruta anterior.
+     * @param to - New route.
+     * @param from - Previous route.
      */
     '$route' (to, from) {
       this.scrollToTop();
@@ -27,7 +27,7 @@ export default {
   },
   methods: {
     /**
-     * Hace scroll instantaneo hacia la parte superior de la ventana.
+     * Instantly scrolls to the top of the window.
      */
     scrollToTop() {
       window.scrollTo(0, 0);

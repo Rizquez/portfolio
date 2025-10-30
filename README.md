@@ -1,28 +1,28 @@
 # 🌐 Portfolio Personal
 
-Este proyecto es mi portfolio web personal, desarrollado con Vue.js, para mostrar mi trayectoria profesional, estudios, certificaciones y proyectos destacados.
+This project is my personal web portfolio, developed with Vue.js, to showcase my professional career, education, certifications, and notable projects.
 
-## 🧾 Descripcion
+## 🧾 Description
 
-El portfolio esta diseñado para ser minimalista, rapido y responsive, priorizando la accesibilidad y la experiencia de usuario.
+The portfolio is designed to be minimalist, fast, and responsive, prioritizing accessibility and user experience.
 
-Incluye secciones clave como:
+It includes key sections such as:
 
-- **Home:** Presentacion principal.
-- **Acerca de mi:** Informacion personal, carrera, estudios y certificaciones.
-- **Portfolio:** Proyectos personales y profesionales.
-- **Contacto:** Formulario y enlaces a redes profesionales.
-- **Politica de privacidad:** Pagina informativa para mayor transparencia.
+- **Home:** Main presentation.
+- **About me:** Personal information, career, education, and certifications.
+- **Portfolio:** Personal and professional projects.
+- **Contact:** Form and links to professional networks.
+- **Privacy policy:** Informative page for greater transparency.
 
-## 🚀 Tecnologias utilizadas
+## 🚀 Technologies used
 
 - **Framework:** Vue.js
-- **Lenguajes:** JavaScript, HTML5, CSS3
-- **Despliegue:** Netlify
+- **Languages:** JavaScript, HTML5, CSS3
+- **Deployment:** Netlify
 
-## 📂 Estructura del proyecto
+## 📂 Project structure
 
-Los archivos principales se encuentran organizados en:
+The main files are organized into:
 
 ```
 porfolio/
@@ -35,21 +35,21 @@ porfolio/
 │   │   ├── images/...
 │   │   └── main.css
 │   ├── components
-│   │   ├── AlertModal.vue              # Modal de alertas
-│   │   ├── BackToTop.vue               # Boton de volver al inicio
-│   │   ├── MainFooter.vue              # Pie de pagina con enlaces
-│   │   ├── MainHeader.vue              # Encabezado y navegacion principal
-│   │   └── Project.vue                 # Componente para mostrar proyectos individuales
+│   │   ├── AlertModal.vue
+│   │   ├── BackToTop.vue
+│   │   ├── MainFooter.vue
+│   │   ├── MainHeader.vue
+│   │   └── Project.vue
 │   ├── router
 │   │   └── index.js
 │   ├── stores
 │   │   └── counter.js
 │   ├── views
-│   │   ├── AboutMeView.vue             # Acerca de mi
-│   │   ├── ContactView.vue             # Contacto
-│   │   ├── HomeView.vue                # Inicio
-│   │   ├── PortfolioView.vue           # Listado de proyectos personales
-│   │   └── PrivacyPolicyView.vue       # Politica de privacidad
+│   │   ├── AboutMeView.vue
+│   │   ├── ContactView.vue
+│   │   ├── HomeView.vue
+│   │   ├── PortfolioView.vue
+│   │   └── PrivacyPolicyView.vue
 │   ├── App.vue
 │   └── main.js
 ├── .editorconfig
@@ -65,27 +65,27 @@ porfolio/
 └── vite.config.js
 ```
 
-## 📦 Instalacion y uso (Windows)
+## 📦 Installation and use (Windows)
 
-1. Clonar el repositorio (ssh):
+1. Clone the repository (ssh):
 ```sh
 git clone git@github.com:Rizquez/portfolio.git
 cd portfolio
 ```
 
-2. Instalar dependencias:
+2. Install dependencies:
 ```sh
 npm install
 ```
 
-3. Ejecutar en entorno de desarrollo:
+3. Run in development environment:
 ```sh
 npm run dev
 ```
 
-## 🔒 Licencia
+## 🔒 License
 
-Este proyecto esta bajo la licencia `MIT`, lo que permite su uso, distribucion y modificacion con las condiciones especificadas en el archivo `LICENSE`.
+This project is licensed under the `MIT` license, which allows its use, distribution, and modification under the conditions specified in the `LICENSE` file.
 
-## ⚙ Contacto, soporte y desarrollo
-- Pedro Rizquez: pedro.rizquez.94@hotmail.com / +34 633 504 225
+## ⚙ Contact, support, and development
+- Pedro Rizquez: pedro.rizquez.94@hotmail.com

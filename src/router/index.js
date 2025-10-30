@@ -1,8 +1,9 @@
 import { createRouter, createWebHistory } from 'vue-router'
 
 /**
- * Definicion de rutas de la aplicacion.
- * Cada ruta mapea una URL a un componente de vista.
+ * Definition of application routes.
+ * 
+ * Each route maps a URL to a view component.
  */
 const routes = [
   {
@@ -38,8 +39,8 @@ const routes = [
 ]
 
 /**
- * Instancia del enrutador de Vue Router.
- * Usa historial basado en `history.pushState`.
+ * Instance of the Vue Router router.
+ * Uses history based on `history.pushState`.
  */
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -47,10 +48,11 @@ const router = createRouter({
 });
 
 /**
- * Este hook toma el valor de `meta.title` definido en la ruta de destino 
- * (`to.meta?.title`) y lo asigna al titulo del documento (`document.title`).
- * De esta forma, el contenido de la pestaña del navegador se actualiza 
- * dinamicamente en funcion de la ruta visitada.
+ * This hook takes the value of `meta.title` defined in the destination path 
+ * (`to.meta?.title`) and assigns it to the document title (`document.title`).
+ * 
+ * This way, the content of the browser tab is dynamically updated 
+ * based on the path visited.
  */
 router.afterEach((to) => {
   const title = to.meta?.title

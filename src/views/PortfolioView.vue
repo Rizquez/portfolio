@@ -7,16 +7,16 @@ import jummyImg from '@/assets/images/png/Jummy.png';
 import ecoBalanceImg from '@/assets/images/png/EcoBalance.png';
 
 /**
- * Objeto con la informacion del proyecto Jummy.
+ * Object containing Jummy project information.
  * 
- * @property {string} title        Nombre del proyecto.
- * @property {string} imgSrc       Ruta o import de la imagen representativa.
- * @property {string} imgAlt       Texto alternativo para la imagen (accesibilidad).
- * @property {string} description  Descripcion general del proyecto.
- * @property {string} technologies Tecnologias utilizadas en el proyecto.
- * @property {string} note         Nota aclaratoria o estado del proyecto.
- * @property {string} linkLabel    Texto del enlace para acceder al recurso.
- * @property {string} linkHref     URL del recurso externo (ej: repositorio).
+ * @property {string} title        Project name.
+ * @property {string} imgSrc       Path or import of the representative image.
+ * @property {string} imgAlt       Alternative text for the image (accessibility).
+ * @property {string} description  General description of the project.
+ * @property {string} technologies Technologies used in the project.
+ * @property {string} note         Explanatory note or project status.
+ * @property {string} linkLabel    Text of the link to access the resource.
+ * @property {string} linkHref     URL of the external resource (e.g., repository).
  */
 const jummy = {
   title: 'Jummy',
@@ -30,16 +30,16 @@ const jummy = {
 }
 
 /**
- * Objeto con la informacion del proyecto EcoBalance.
+ * Object containing EcoBalance project information.
  * 
- * @property {string} title        Nombre del proyecto.
- * @property {string} imgSrc       Ruta o import de la imagen representativa.
- * @property {string} imgAlt       Texto alternativo para la imagen (accesibilidad).
- * @property {string} description  Descripcion general del proyecto.
- * @property {string} technologies Tecnologias utilizadas en el proyecto.
- * @property {string} note         Nota aclaratoria o estado del proyecto.
- * @property {string} linkLabel    Texto del enlace para acceder al recurso.
- * @property {string} linkHref     URL del recurso externo (ej: repositorio).
+ * @property {string} title        Project name.
+ * @property {string} imgSrc       Path or import of the representative image.
+ * @property {string} imgAlt       Alternative text for the image (accessibility).
+ * @property {string} description  General description of the project.
+ * @property {string} technologies Technologies used in the project.
+ * @property {string} note         Explanatory note or project status.
+ * @property {string} linkLabel    Text of the link to access the resource.
+ * @property {string} linkHref     URL of the external resource (e.g., repository).
  */
 const ecoBalance = {
   title: 'EcoBalance',

@@ -7,102 +7,102 @@ import MainFooter from '@/components/MainFooter.vue'
 import AlertModal from '@/components/AlertModal.vue'
 
 /**
- * ID del servicio configurado en EmailJS.
+ * Service ID configured in EmailJS.
  * 
- * Se obtiene en el panel de EmailJS dentro de la seccion "Email Services".
+ * This can be found in the EmailJS panel in the "Email Services" section.
  */
 const SERVICE_ID = 'service_4go4bqq'
 
 /**
- * ID de la plantilla de correo creada en EmailJS.
+ * ID of the email template created in EmailJS.
  * 
- * Define el subject y el body usando placeholders como {{name}}, {{email}}, {{message}}.
+ * Define the subject and body using placeholders such as {{name}}, {{email}}, {{message}}.
  */
 const TEMPLATE_ID = 'template_b0tny8r'
 
 /**
- * Clave publica proporcionada por EmailJS para autenticar las peticiones desde el cliente. 
+ * Public key provided by EmailJS to authenticate requests from the client. 
  * 
- * Es segura de exponer en el frontend.
+ * It is safe to expose on the frontend.
  */
 const PUBLIC_KEY  = 'kuTMf8Ax5bYS7e0_d'
 
 /**
- * Nombre del remitente ingresado en el formulario.
+ * Sender's name entered on the form.
  */
 const name = ref('')
 
 /**
- * Direccion de correo del remitente ingresada en el formulario.
+ * Sender's email address entered in the form.
  */
 const email = ref('')   
 
 /**
- * Asunto del mensaje ingresado en el formulario.
+ * Subject of the message entered in the form.
  */
 const subject = ref('')
 
 /**
- * Contenido principal del mensaje escrito en el formulario.
+ * Main content of the message written in the form.
  */
 const message = ref('')
 
 /**
- * Campo honeypot oculto en el formulario.
+ * Hidden honeypot field in the form.
  * 
- * Se utiliza como tecnica anti-spam: si este campo tiene contenido, se asume que el envio proviene de un bot.
+ * Used as an anti-spam technique: if this field has content, it is assumed that the submission comes from a bot.
  */
 const honeypot = ref('')
 
 /**
- * Indicador de envío del formulario.
+ * Form submission indicator.
  */
 const submitted = ref(false)
 
 /**
- * Referencia al elemento <form> del template.
+ * Reference to the <form> element in the template.
  */
 const formElements = ref(null)
 
 /**
- * Mensaje mostrado dentro del modal de alerta (feedback al usuario tras validar o enviar el formulario).
+ * Message displayed within the alert modal (feedback to the user after validating or submitting the form).
  */
 const modalMessage = ref('')
 
 /**
- * Controla la visibilidad del modal de alerta.
+ * Controls the visibility of the alert modal.
  */
 const isModalVisible = ref(false)
 
 /**
- * Estado de carga al enviar el formulario.
+ * Loading status when submitting the form.
  * 
- * Mientras sea `true`, los inputs y el boton se deshabilitan para evitar envios multiples.
+ * As long as it is `true`, the inputs and button are disabled to prevent multiple submissions.
  */
 const loading = ref(false)
 
 /**
- * Cierra el modal de alerta.
+ * Closes the alert modal.
  * 
- * Se ejecuta cuando el usuario hace clic en el boton de cierre.
+ * Runs when the user clicks the close button.
  */
 const handleModalClose = () => {
   isModalVisible.value = false
 }
 
 /**
- * Maneja el envio del formulario de contacto:
- * - Evita envios de bots verificando el honeypot.
- * - Valida que los campos requeridos esten completos y correctos.
- * - Envia los datos a traves de EmailJS usando el servicio, plantilla y clave publica configurados.
- * - Muestra un mensaje de exito o error en el modal de alerta.
+ * Handles the submission of the contact form:
+ * - Prevents bot submissions by verifying the honeypot.
+ * - Validates that the required fields are complete and correct.
+ * - Sends the data via EmailJS using the configured service, template, and public key.
+ * - Displays a success or error message in the alert modal.
  */
 const handleFormSubmit = async () => {
   if (honeypot.value) return 
 
-  submitted.value = true // Marcar como enviado para activar estilos
+  submitted.value = true // Mark as sent to activate styles
 
-  // Usa validacion nativa HTML5 (required, type="email", etc)
+  // Use native HTML5 validation (required, type="email", ...)
   if (!formElements.value?.checkValidity()) {
     modalMessage.value = '⚠️ Review the fields: fill in everything and verify that your email address is valid'
     isModalVisible.value = true
@@ -126,7 +126,7 @@ const handleFormSubmit = async () => {
       email.value = ''
       subject.value = ''
       message.value = ''
-      submitted.value = false // Reinicia el estado de enviado para ocultar marcas rojas
+      submitted.value = false // Reset sent status to hide red marks
     } else {
       modalMessage.value = '❌ The message could not be sent, please try again later.'
     }

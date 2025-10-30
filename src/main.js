@@ -5,21 +5,21 @@ import App from '@/App.vue'
 import router from '@/router'
 
 /**
- * Crea una nueva instancia de la aplicacion Vue.
+ * Create a new instance of the Vue application.
  */
 const app = createApp(App)
 
 /**
- * Usa Pinia como sistema de estado global.
+ * Use Pinia as a global state system.
  */
 app.use(createPinia())
 
 /**
- * Usa Vue Router para el manejo de rutas.
+ * Use Vue Router for route management.
  */
 app.use(router)
 
 /**
- * Monta la aplicacion en el elemento con ID 'app'.
+ * Mount the application on the element with ID app.
  */
 app.mount('#app')
