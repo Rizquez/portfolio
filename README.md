@@ -25,7 +25,7 @@ It includes key sections such as:
 The main files are organized into:
 
 ```
-porfolio/
+portfolio/
 ├── .vscode/...
 ├── public
 │   ├── _redirects
