@@ -1,4 +1,4 @@
-# 🌐 Portfolio Personal
+# 🌐 Portfolio Personal - v.1.0.0
 
 This project is my personal web portfolio, developed with Vue.js, to showcase my professional career, education, certifications, and notable projects.
 
