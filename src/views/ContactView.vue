@@ -128,7 +128,7 @@ const handleFormSubmit = async () => {
       message.value = ''
       submitted.value = false // Reset sent status to hide red marks
     } else {
-      modalMessage.value = '❌ The message could not be sent, please try again later.'
+      modalMessage.value = '⚠️ The message could not be sent, please try again later.'
     }
   } catch (_) {
     modalMessage.value = '❌ Error sending email, please contact me directly at pedro.rizquez.94@hotmail.com'
